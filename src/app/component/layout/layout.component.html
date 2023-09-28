@@ -1,0 +1,56 @@
+<div class="flex h-screen">
+    <div class="w-[320px] p-8 flex flex-col justify-center border-r">
+        <div class="flex pb-8">
+            <img class="" src>
+            <h1 class="text-xl text-[#150050] font-bold"><a routerLink="clients">SG Saga Trading </a></h1>
+        </div>
+      <nav class="flex-grow">
+        <ul class="font-medium">
+            <li class="border-b-[0.5px] border-gray-200 py-2 pb-10">
+                <div class="py-2 rounded text-gray-800 cursor-pointer"><a routerLink="clients"> Clients</a></div>
+                <ul class="">
+                    <li [ngClass]="className"><a routerLink="clients"> Overview</a></li>
+                </ul>
+            </li>
+            <li class="border-b-[0.5px] border-t-[0.5px] border-gray-200 py-2 pb-10">
+                <div class="py-2 rounded text-gray-800 cursor-pointer"><a routerLink="orders">Client Trades</a></div>
+                <!-- <div class="py-2 rounded text-gray-800 cursor-pointer"><a routerLink="trades">Trades</a></div> -->
+                <ul class="">
+                    <li [ngClass]="className"><a routerLink="pendingtrades"> Pending Trades</a></li>
+                    <li [ngClass]="className"><a routerLink="filledtrades"> Filled Trades</a></li>
+                    <li [ngClass]="className"><a routerLink="cancelledtrades"> Cancelled Trades</a></li>
+                    <li [ngClass]="className"><a routerLink="failedtrades"> Failed Trades</a></li>
+                </ul>
+            </li>
+            <li class="border-b-[0.5px] border-gray-200 py-2 pb-10">
+                <div class="py-2 rounded text-gray-800 cursor-pointer"><a routerLink="trades"> All Orders </a></div>
+            </li>
+            <li class="border-b-[0.5px] border-gray-200 py-2 pb-10">
+                <div class="py-2 rounded text-gray-800 cursor-pointer"><a routerLink="activities"> Activities </a></div>
+            </li>
+            <li class="border-b-[0.5px] border-gray-200 py-2 pb-10">
+                <div class="py-2 rounded text-gray-800 cursor-pointer"><a routerLink="clients"> Exchanges </a></div>
+                <ul class="">
+                    <li [ngClass]="className"><a routerLink="clients"> Overview</a></li>
+                </ul>
+            </li>
+        </ul>
+      </nav> 
+      <div class="flex flex-col items-center">
+        <img class="w-16 h-16 rounded-full bg-gray-200" src="" />
+        <div class="text-xs text-center py-2 text-gray-500">
+            <h3 class="font-bold">Miss Sparklombs</h3>
+            <span>admin@gmail.com</span>
+        </div>  
+
+        <div (click)="logout()" class="text-sm my-2 font-semibold inline-block border-b border-[#150050dd] text-[#150050dd] cursor-pointer hover:border-[#150050] hover:text-[#150050] transition-colors ease-out duration-500">
+            <fa-icon [icon]="iconSignOut" /> Sign Out 
+        </div>
+      </div>       
+    </div>
+    <div class="w-full h-screen flex flex-col bg-gray-50">
+        <main class="flex-grow px-8">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>
